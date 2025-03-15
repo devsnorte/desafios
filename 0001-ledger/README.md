@@ -1,65 +1,103 @@
-### Desafio: Criação de um Ledger Básico
+# Ledger CLI
 
-**Objetivo:**
-Desenvolver um sistema simples de ledger para registrar transações financeiras fictícias, utilizando a stack de sua escolha. O sistema deve permitir o cadastro de entradas e saídas, consultar o saldo atual, e listar o histórico de transações. O foco é a funcionalidade e clareza do código, com conceitos de persistência e consulta de dados bem definidos.
+Ledger CLI é uma aplicação simples de gestão financeira via linha de comando (CLI) utilizando **Ruby** e **SQLite**. O projeto faz parte de um desafio fornecido pela comunidade [DevsNorte](https://github.com/devsnorte/desafios/tree/main/0001-ledger).
 
----
+## ✨ Funcionalidades
 
-**Especificações:**
+- **Adicionar transações** (entradas e saídas)
+- **Listar transações** em ordem cronológica
+- **Filtrar transações** por tipo ou intervalo de datas
+- **Consultar saldo atual**
+- **Exportar histórico** em CSV ou JSON
 
-1. **Funcionalidades mínimas:**
+## 📝 Requisitos
 
-   - **Cadastro de Transações:**
-     Permitir registrar transações de dois tipos:
+- **Ruby** (versão 3.0 ou superior)
+- **SQLite3**
 
-     - **Entrada (receita):** valores positivos.
-     - **Saída (despesa):** valores negativos. Cada transação deve incluir:
-     - ID único.
-     - Valor.
-     - Data da transação (pode ser gerada automaticamente).
-     - Descrição opcional.
+📌 Escolha da Stack
 
-   - **Consulta do Saldo Atual:**
-     Exibir o saldo total com base nas transações registradas.
+A escolha de Ruby para este projeto foi motivada pelo fato de ter sido a primeira linguagem com a qual tive contato para aprendizado. Durante esse processo, percebi que Ruby é uma ferramenta poderosa, simples e eficaz, permitindo um desenvolvimento ágil e conciso. Sua sintaxe intuitiva e a vasta comunidade de suporte tornam o desenvolvimento mais produtivo e prazeroso.
 
-   - **Histórico de Transações:**
-     Listar todas as transações em ordem cronológica (mais recente primeiro).
+Além disso, como a ideia do desafio era utilizar o que há de mais "simples" dentro da linguagem para a entrega, optei por soluções nativas e diretas. A utilização do SQLite3 também se justifica pela sua leveza e facilidade de integração em aplicações pequenas, sem necessidade de um servidor de banco de dados dedicado.
 
-2. **Requisitos técnicos:**
+## ♻️ Instalação
 
-   - Persistência dos dados (banco de dados simples, arquivo local ou em memória).
-   - API (se for web) ou interface CLI para interagir com o sistema.
-   - Uso de boas práticas de programação (organização do código, tratamento de erros, etc.).
+1. Clone o repositório:
 
-3. **Stack:**
-   Fique à vontade para escolher sua stack preferida (Ex: Elixir, Node.js, Python, Ruby, etc.). A escolha da stack deve ser documentada com justificativa.
+   ```sh
+   git clone https://github.com/ruanvalente/ledger_api_cli
+   cd ledger-api_cli
+   ```
 
-4. **Extras (opcional):**
+2. Instale as dependências:
 
-   - **Filtros no Histórico:**
-     Permitir filtrar por tipo de transação ou intervalo de datas.
-   - **Exportação:**
-     Exportar o histórico em formato CSV ou JSON.
-   - **UI Simples:**
-     Criar uma interface visual básica (usando frameworks web ou desktop).
+   ```sh
+   bundle install
+   ```
 
----
+3. Configure o banco de dados SQLite:
+   ```sh
+   ruby lib/models/transaction.rb
+   ```
 
-**Regras do desafio:**
+## ⚙️ Uso
 
-- Tempo máximo: **6 horas.**
-- Código deve ser bem documentado.
-- O projeto deve conter instruções claras de instalação e uso (ex: `README.md`).
+Para iniciar a aplicação, execute:
 
----
+```sh
+ruby cli.rb
+```
 
-**Critérios de avaliação:**
+### ⚙️ Opções no menu
 
-1. **Funcionalidade:** O sistema atende os requisitos principais?
-2. **Clareza do código:** Código limpo, organizado e bem documentado.
-3. **Simplicidade e eficácia:** A solução é prática e fácil de entender?
-4. **Extras (se implementados):** Qualidade dos recursos adicionais.
+- **1** - Adicionar transação
+- **2** - Listar transações
+- **3** - Consultar saldo
+- **4** - Exportar histórico
+- **5** - Sair
 
----
+### ⚖️ Filtrar Transações
 
-Boa sorte e mãos à obra! 🚀
+Ao listar transações, é possível aplicar filtros:
+
+- **Tipo**: Entrada (valor positivo) ou Saída (valor negativo)
+- **Período**: Informar intervalo de datas no formato `AAAA-MM-DD`
+
+## 📚 Exportação de Dados
+
+É possível exportar as transações para **CSV** ou **JSON**:
+
+```sh
+Escolha o formato para exportação (csv/json):
+```
+
+Os arquivos serão salvos na pasta `export/`.
+
+## 🏢 Estrutura do Projeto
+
+```
+ledger/
+├── cli.rb                 # Interface de linha de comando
+├── database/
+│   ├── schema.sql         # Estrutura do banco de dados
+├── lib/
+│   ├── models/
+│   │   ├── transaction.rb # Modelo de transação
+│   ├── services/
+│   │   ├── transaction_service.rb # Lógica de negócio
+│   |── test/
+│   │   ├── transaction_service_test # Testes unitários
+├── export/                # Diretório de arquivos exportados
+├── Gemfile                # Dependências do projeto
+├── Rakefile               # Tarefas automatizadas
+└── README.md              # Documentação
+```
+
+## 🛠️ Contribuição
+
+Sinta-se à vontade para contribuir! Abra uma _issue_ ou envie um _pull request_ no repositório.
+
+## 💪 Licença
+
+Este projeto está licenciado sob a **MIT License**.
