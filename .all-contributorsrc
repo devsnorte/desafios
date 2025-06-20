@@ -28,6 +28,16 @@
         "code",
         "review"
       ]
+    },
+    {
+      "login": "franknfjr",
+      "name": "Frank Ferreira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/28960217?v=4",
+      "profile": "http://frankferreira.dev",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
