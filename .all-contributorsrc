@@ -38,6 +38,15 @@
         "code",
         "ideas"
       ]
+    },
+    {
+      "login": "rafaelacorrea",
+      "name": "Rafaela Correa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35432817?v=4",
+      "profile": "https://www.linkedin.com/in/rafaelafccorrea/",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
