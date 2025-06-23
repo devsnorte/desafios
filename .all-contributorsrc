@@ -47,6 +47,16 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "ecsistem",
+      "name": "Edson Costa",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61160635?v=4",
+      "profile": "https://github.com/ecsistem",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
