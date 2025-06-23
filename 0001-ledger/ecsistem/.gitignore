@@ -1,0 +1,49 @@
+# Maven
+/target/
+/.mvn/
+/.mvnw
+/mvnw.cmd
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos gerados
+*.class
+
+# Arquivos temporários
+*.tmp
+*.swp
+
+# Configurações do sistema e do usuário
+*.bak
+
+# Spring Boot
+spring.log
+
+# Outros
+*.jar
+*.war
+*.ear
+
+# Arquivos de teste e cobertura
+coverage/
+*.jacoco
+
